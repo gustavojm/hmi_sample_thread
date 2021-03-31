@@ -2,28 +2,61 @@
 <!-- Generated with glade 3.18.3 -->
 <interface>
   <requires lib="gtk+" version="3.18"/>
-  <object class="GtkApplicationWindow" id="sample_gui_threads">
+  <object class="GtkWindow" id="sample_gui_threads">
     <property name="can_focus">False</property>
-    <property name="type">popup</property>
-    <property name="resizable">False</property>
-    <property name="window_position">mouse</property>
-    <property name="default_width">440</property>
-    <property name="default_height">250</property>
-    <property name="deletable">False</property>
-    <property name="show_menubar">False</property>
-    <signal name="destroy" handler="window_close" swapped="no"/>
     <child>
       <object class="GtkBox" id="box1">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
         <child>
-          <object class="GtkButton" id="cmd_btn1">
-            <property name="label" translatable="yes">button</property>
+          <object class="GtkFixed" id="fixed1">
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="receives_default">True</property>
-		    <signal name="button-press-event" handler="on_cmd_btn1_button_press_event" swapped="no"/>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkButton" id="cmd_btn1">
+                <property name="label" translatable="yes">button</property>
+                <property name="width_request">100</property>
+                <property name="height_request">80</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="xalign">0.47999998927116394</property>
+                <signal name="button-press-event" handler="on_cmd_btn1_button_press_event" swapped="no"/>
+              </object>
+              <packing>
+                <property name="x">218</property>
+                <property name="y">19</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkSwitch" id="btn_switch">
+                <property name="use_action_appearance">False</property>
+                <property name="width_request">100</property>
+                <property name="height_request">80</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <signal name="button-press-event" handler="on_btn_switch_button_press_event" swapped="no"/>
+                <signal name="state-set" handler="on_btn_switch_state_set" swapped="no"/>
+              </object>
+              <packing>
+                <property name="x">411</property>
+                <property name="y">44</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lbl_posActArm">
+                <property name="width_request">100</property>
+                <property name="height_request">80</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">label</property>
+              </object>
+              <packing>
+                <property name="x">24</property>
+                <property name="y">23</property>
+              </packing>
+            </child>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -32,21 +65,46 @@
           </packing>
         </child>
         <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <object class="GtkEntry" id="logs_box">
+          <object class="GtkSpinner" id="spinner1">
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
+            <property name="can_focus">False</property>
+            <property name="active">True</property>
           </object>
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
-            <property name="position">3</property>
+            <property name="position">1</property>
           </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolledwindow1">
+            <property name="width_request">573</property>
+            <property name="height_request">154</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="shadow_type">in</property>
+            <child>
+              <object class="GtkViewport" id="viewport1">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <child>
+                  <object class="GtkTextView" id="logs_TextView">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="wrap_mode">word</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <placeholder/>
         </child>
       </object>
     </child>

@@ -1,9 +1,3 @@
-"""
-Simple socket client thread sample.
-
-Eli Bendersky (eliben@gmail.com)
-This code is in the public domain
-"""
 import socket
 import struct
 import threading
@@ -89,7 +83,6 @@ class SocketClientThread(threading.Thread):
         self.reply_q.put(reply)
 
     def _handle_SEND(self, cmd):
-        header = struct.pack('<L', len(cmd.data))        
         try:
             self.socket.sendall(cmd.data.encode())
             self.reply_q.put(self._success_reply())
