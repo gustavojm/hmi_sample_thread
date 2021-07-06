@@ -25,8 +25,8 @@
                 <signal name="button-press-event" handler="on_cmd_btn1_button_press_event" swapped="no"/>
               </object>
               <packing>
-                <property name="x">218</property>
-                <property name="y">19</property>
+                <property name="x">300</property>
+                <property name="y">40ss</property>
               </packing>
             </child>
             <child>
@@ -41,7 +41,7 @@
               </object>
               <packing>
                 <property name="x">411</property>
-                <property name="y">44</property>
+                <property name="y">40</property>
               </packing>
             </child>
             <child>
@@ -50,11 +50,46 @@
                 <property name="height_request">80</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">label</property>
+                <property name="label" translatable="yes"></property>
               </object>
               <packing>
                 <property name="x">24</property>
                 <property name="y">23</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkProgressBar" id="temp1_bar">
+                <property name="width_request">55</property>
+                <property name="height_request">80</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="orientation">vertical</property>
+                <property name="inverted">True</property>
+                <property name="text" translatable="yes"></property>
+                <property name="show_text">True</property>
+                <property name="ellipsize">start</property>
+              </object>
+              <packing>
+                <property name="x">127</property>
+                <property name="y">35</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkProgressBar" id="temp2_bar">
+                <property name="width_request">55</property>
+                <property name="height_request">80</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="orientation">vertical</property>
+                <property name="pulse_step">1</property>
+                <property name="inverted">True</property>
+                <property name="text" translatable="yes"></property>
+                <property name="show_text">True</property>
+                <property name="ellipsize">start</property>
+              </object>
+              <packing>
+                <property name="x">200</property>
+                <property name="y">35</property>
               </packing>
             </child>
           </object>
@@ -104,7 +139,30 @@
           </packing>
         </child>
         <child>
-          <placeholder/>
+          <object class="GtkProgressBar" id="used_mem_bar">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="show_text">True</property>
+            <property name="text" translatable="yes">Free: </property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkProgressBar" id="min_mem_bar">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="show_text">True</property>
+          	<property name="text" translatable="yes">Min: </property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">4</property>
+          </packing>
         </child>
       </object>
     </child>
