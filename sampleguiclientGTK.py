@@ -49,9 +49,9 @@ class SampleGUIClientWindow():
         self.client.start()
 
     def create_timers(self):
-        GObject.threads_init()
-        self.client_reply_timer = GObject.timeout_add(10, self.on_client_reply_timer)
-        self.telemetry_timer = GObject.timeout_add(100, self.telemetria)
+        # GObject.threads_init()
+        self.client_reply_timer = GLib.timeout_add(10, self.on_client_reply_timer)
+        self.telemetry_timer = GLib.timeout_add(100, self.telemetria)
 
     def on_btn_switch_state_set(self, widget, state):
         return True
